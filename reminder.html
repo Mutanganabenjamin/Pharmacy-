@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Refill Reminders</title>
+    <link rel="stylesheet" href="reminder.css">
+</head>
+<body>
+    <header>
+
+            <h2>Pharmacy Delivery</h1>
+        
+        <h1>Refill Reminders</h1>
+        <nav>
+            <ul>
+                <li><a href="useradm.html">Dashboard</a></li>
+                
+                <li><a href="reminder.html">Refill Reminders</a></li>
+                
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="refill-reminders-content">
+            <h2>Refill Reminders</h2>
+            <p>Here are your upcoming medication refill reminders:</p>
+            
+            <ul id="reminder-list">
+                
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Pharmacy Delivery. All rights reserved.</p>
+    </footer>
+
+    <script>
+       
+
+        
+        const refillReminders = [
+            { medicine: "Medicine 1", nextRefillDate: "2023-09-25" },
+            { medicine: "Medicine 2", nextRefillDate: "2023-09-28" },
+            { medicine: "Medicine 3", nextRefillDate: "2023-10-02" },
+        ];
+
+      
+        function populateRefillReminders() {
+            const reminderList = document.getElementById("reminder-list");
+
+            
+            reminderList.innerHTML = "";
+
+            
+            refillReminders.forEach((reminder) => {
+                const listItem = document.createElement("li");
+                listItem.textContent = `Medicine: ${reminder.medicine}, Next Refill Date: ${reminder.nextRefillDate}`;
+                reminderList.appendChild(listItem);
+            });
+        }
+        populateRefillReminders();
+    </script>
+</body>
+</html>

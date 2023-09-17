@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medicine Stock Management</title>
+    <link rel="stylesheet" type="text/css" href="stock.css">
+    <div id="out-of-stock-message">  
+    </div>
+
+    <script>
+        
+        var medicineStock = [
+            { id: 1, name: "Medicine 1", quantity: 100, price: 19.99, type: "Type A" },
+            { id: 2, name: "Medicine 2", quantity: 50, price: 29.99, type: "Type B" },
+        ];
+
+        function displayMedicineStock() {
+            var stockTable = document.getElementById("stock-table");
+            stockTable.innerHTML = "";
+
+            medicineStock.forEach(function (medicine) {
+                var row = stockTable.insertRow();
+                row.innerHTML = `
+                    <td>${medicine.name}</td>
+                    <td>${medicine.quantity}</td>
+                    <td>${medicine.price}</td>
+                    <td>${medicine.type}</td>
+                    <td>
+                        <button onclick="editMedicine(${medicine.id})">Edit</button>
+                        <button onclick="deleteMedicine(${medicine.id})">Delete</button>
+                    </td>
+                `;
+            });
+        }
+
+       
+        function addMedicine() {
+            
+            var name = prompt("Enter medicine name:");
+            var quantity = parseInt(prompt("Enter quantity:"));
+            var price = parseFloat(prompt("Enter price:"));
+            var type = prompt("Enter type:");
+
+            var id = medicineStock.length + 1;
+
+           
+            var newMedicine = { id, name, quantity, price, type };
+
+            medicineStock.push(newMedicine);
+
+            displayMedicineStock();
+        }
+
+        function editMedicine(id) {
+           
+            var medicine = medicineStock.find(med => med.id === id);
+
+            if (medicine) {
+                
+                medicine.name = prompt("Edit medicine name:", medicine.name);
+                medicine.quantity = parseInt(prompt("Edit quantity:", medicine.quantity));
+                medicine.price = parseFloat(prompt("Edit price:", medicine.price));
+                medicine.type = prompt("Edit type:", medicine.type);
+
+              
+                displayMedicineStock();
+            }
+        }
+
+        
+        function deleteMedicine(id) {
+          
+            var index = medicineStock.findIndex(med => med.id === id);
+
+            if (index !== -1) {
+              
+                medicineStock.splice(index, 1);
+
+               
+                displayMedicineStock();
+            }
+        }
+
+       
+        displayMedicineStock();
+    </script>
+</head>
+<body>
+    <body>
+	
+		<h2>Pharmacy Delivery</h2>
+    <h1>Medicine Stock Management</h1>
+
+    <button onclick="addMedicine()">Add Medicine</button>
+
+    
+    <table id="stock-table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Type</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+           
+        </tbody>
+    </table>
+</body>
+</html>

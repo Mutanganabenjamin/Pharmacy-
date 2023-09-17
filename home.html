@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pharmacy Delivery</title>
+	<link rel="stylesheet" type="text/css" href="landing.css">
+</head>
+<body>
+	<header>
+		<h1>Pharmacy Delivery</h1>
+		<nav>
+			<ul>
+				<li style="font-size: 20px;"><a href="landingpage.html">Home</a></li>
+				<li style="font-size: 20px;"><a href="stock.html">Stock</a></li>
+				<li style="font-size: 20px;"><a href="order.html">Order</a></li>
+				<li style="font-size: 20px;"><a href="login.html">login</a></li>
+				<li style="font-size: 20px;"><a href="signup.html">signup</a></li>
+				<li style="font-size: 20px;"><a href="dash.html">Dashboard</a></li>
+				
+			</ul>
+		</nav>
+	</header>
+	<section class="search">
+    <h2>Search for Medicines</h2>
+    <form id="medicine-search-form">
+        <input type="text" id="medicine-name" placeholder="Search for medicines...">
+        <button type="submit">Search</button>
+    </form>
+    <div id="search-result">
+       
+    </div>
+</section>
+<script>
+ 
+  const searchForm = document.getElementById("medicine-search-form");
+  const searchResult = document.getElementById("search-result");
+
+  
+  searchForm.addEventListener("submit", function (event) {
+      event.preventDefault(); 
+      const medicineName = document.getElementById("medicine-name").value;
+
+      // Display the entered medicine name in the result container
+      searchResult.innerHTML = `You searched for: <strong>${medicineName}</strong>`;
+  });
+</script>
+
+		<h1>Why Medicine Delivery is Important</h1>
+	<br/>
+	<ul style="list-style-type:circle">
+	  <li>
+		Convenience:It provides a convenient way for individuals, especially those who are elderly, disabled, or unable to leave their homes, to access their prescribed medications without the need to travel to a pharmacy.
+	  </li></br>
+	  <li>
+		Healthcare Accessibility: Medicine delivery ensures that people in remote or underserved areas can receive essential medications, improving healthcare access and outcomes.
+	  </li></br>
+	  <li>
+		Time and Effort: It saves time and effort for busy individuals who may not have the time to visit a physical pharmacy due to work or other commitments.
+	  </li></br>
+	  <li>
+		Emergency Situations:Medicine delivery can be crucial during emergencies when individuals may urgently require medication but are unable to physically go to a pharmacy.
+	  </li></br>
+	  <li>
+		Chronic Conditions: Patients with chronic illnesses often require a regular supply of medications. Delivery services help ensure they consistently receive their prescribed drugs.
+	  </li></br>
+	<li>
+		Chronic Conditions: Patients with chronic illnesses often require a regular supply of medications. Delivery services help ensure they consistently receive their prescribed drugs.
+	  </li></br>
+	  <li>
+		Privacy and Confidentiality: Some individuals may prefer the privacy and confidentiality that comes with having medications delivered to their doorstep rather than picking them up in person.
+	  </li></br>
+	  <li>
+		Pandemic Situations: During outbreaks like the COVID-19 pandemic, medicine delivery reduces the risk of exposure to the virus by limiting unnecessary interactions in crowded places.
+	  </li></br>
+	  <li>
+		Adherence to Treatment Plans: Medicine delivery can improve medication adherence by making it easier for patients to stick to their prescribed treatment plans.
+	  </li></br>
+	</ul>
+	</section>
+	<main>
+    <h1>Available Medicines</h1>
+    
+    
+    <div class="medicine-list">
+        <div class="medicine">
+            <h2>Medicine 1</h2>
+            <ul>
+                <li> IBUPROFEN</li>
+              </ul>
+              <div class="container">
+                <div class="image">
+                  <img src="ibuprofen.jpg" alt="Image">
+                </div>
+            <p>Type: Type A</p>
+            <p>Price: $19.99</p>
+            <button onclick="addToCart(1, 'Medicine 1', 19.99)">Add to Cart</button>
+        </div>
+        <div class="medicine-list">
+            <div class="medicine">
+                <h2>Medicine 1</h2>
+                <ul>
+                    <li> amoxicillin</li>
+                  </ul>
+                  <div class="container">
+                    <div class="image">
+                      <img src="amoxicillin.jpg" alt="Image">
+                    </div>
+                <p>Type: Type A</p>
+                <p>Price: $19.99</p>
+                <button onclick="addToCart(1, 'Medicine 1', 19.99)">Add to Cart</button>
+            </div>
+            <div class="medicine-list">
+                <div class="medicine">
+                    <h2>Medicine 1</h2>
+                    <ul>
+                        <li> malaria</li>
+                      </ul>
+                      <div class="container">
+                        <div class="image">
+                          <img src="malaria.jpg" alt="Image">
+                        </div>
+                    <p>Type: Type A</p>
+                    <p>Price: $19.99</p>
+                    <button onclick="addToCart(1, 'Medicine 1', 19.99)">Add to Cart</button>
+                </div>
+                <div class="medicine-list">
+                    <div class="medicine">
+                        <h2>Medicine 1</h2>
+                        <ul>
+                            <li> IBUPROFEN</li>
+                          </ul>
+                          <div class="container">
+                            <div class="image">
+                              <img src="ibuprofen.jpg" alt="Image">
+                            </div>
+                        <p>Type: Type A</p>
+                        <p>Price: $19.99</p>
+                        <button onclick="addToCart(1, 'Medicine 1', 19.99)">Add to Cart</button>
+                    </div>
+                    <div class="medicine-list">
+                        <div class="medicine">
+                            <h2>Medicine 1</h2>
+                            <ul>
+                                <li> IBUPROFEN</li>
+                              </ul>
+                              <div class="container">
+                                <div class="image">
+                                  <img src="ibuprofen.jpg" alt="Image">
+                                </div>
+                            <p>Type: Type A</p>
+                            <p>Price: $19.99</p>
+                            <button onclick="addToCart(1, 'Medicine 1', 19.99)">Add to Cart</button>
+                        </div>
+        
+    </div>
+    
+    
+    <div class="shopping-cart">
+        <h2>Shopping Cart</h2>
+        <ul id="cart-items">
+            
+        </ul>
+        <p>Total: <span id="cart-total">$0.00</span></p>
+        <ul>
+			<li style="font-size: 20px;"><a href="checkout.html" button onclick="">Checkout</button></a></li>
+			</ul>
+    </div>
+    
+    
+    <script>
+        var cart = [];
+
+        function addToCart(id, name, price) {
+            
+            var itemIndex = cart.findIndex(item => item.id === id);
+
+            if (itemIndex !== -1) {
+                cart[itemIndex].quantity++;
+            } else {
+                
+                cart.push({ id, name, price, quantity: 1 });
+            }
+
+           
+            updateCart();
+        }
+
+        function updateCart() {
+            var cartItems = document.getElementById("cart-items");
+            var cartTotal = document.getElementById("cart-total");
+            var total = 0;
+
+           
+            cartItems.innerHTML = "";
+
+        
+            cart.forEach(function (item) {
+                var listItem = document.createElement("li");
+                listItem.textContent = `${item.name} (Quantity: ${item.quantity})`;
+                cartItems.appendChild(listItem);
+
+                total += item.price * item.quantity;
+            });
+
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+        }
+
+    </script>
+	  </main>
+
+	  <footer>© 2023 Pharmacy Delivery. All rights reserved.</footer>
+
+	  </body>
+	  </html>

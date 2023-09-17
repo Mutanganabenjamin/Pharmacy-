@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Medicines</title>
+    <link rel="stylesheet" href="manage-medicines.css">
+</head>
+<body>
+    <header>
+        <h1>Manage Medicines</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li><a href="view-stock.html">View Stock</a></li>
+                <li><a href="view-orders.html">View Orders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="manage-stock">
+            <h2>Manage Stock</h2>
+            <
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medicine ID</th>
+                        <th>Medicine Name</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                    <tr>
+                        <td>1</td>
+                        <td>Medicine 1</td>
+                        <td>Type A</td>
+                        <td>$19.99</td>
+                        <td>100</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Medicine 2</td>
+                        <td>Type A</td>
+                        <td>$19.99</td>
+                        <td>100</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Medicine 3</td>
+                        <td>Type A</td>
+                        <td>$19.99</td>
+                        <td>100</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Medicine 4</td>
+                        <td>Type A</td>
+                        <td>$19.99</td>
+                        <td>100</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Medicine 5</td>
+                        <td>Type A</td>
+                        <td>$19.99</td>
+                        <td>100</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Medicine 6</td>
+                        <td>Type A</td>
+                        <td>$19.99</td>
+                        <td>100</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Medicine 7</td>
+                        <td>Type A</td>
+                        <td>$19.99</td>
+                        <td>100</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Medicine 8</td>
+                        <td>Type A</td>
+                        <td>$19.99</td>
+                        <td>100</td>
+                        <td>
+                            <a href="#">Edit</a> |
+                            <a href="#">Delete</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+       
+
+        <section id="view-orders">
+            <h2>View Orders</h2>
+           
+        </section>
+    </main>
+</head>
+<body>
+   
+    
+    <script>
+        
+        function editMedicine(medicineID) {
+           
+            window.location.href = `edit-medicine.html?id=${medicineID}`;
+        }
+
+     
+        function deleteMedicine(medicineID) {
+           
+            if (confirm("Are you sure you want to delete this medicine?")) {
+               
+                fetch(`/api/delete-medicine?id=${medicineID}`, {
+                    method: 'DELETE',
+                })
+                .then(response => {
+                    if (response.ok) {
+                        
+                        alert('Medicine deleted successfully.');
+                     
+                        alert('Failed to delete medicine. Please try again.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while deleting the medicine.');
+                });
+            }
+        }
+    </script>
+</body>
+</html>

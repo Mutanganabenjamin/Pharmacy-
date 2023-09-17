@@ -1,0 +1,35 @@
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px;
+}
+
+nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul a {
+    text-decoration: none;
+}
+
+main {
+    margin-left: 160px;
+    padding: 1em;
+}
+
+section {
+    background-color: white;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+

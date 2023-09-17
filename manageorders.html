@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Orders</title>
+    <link rel="stylesheet" type="text/css" href="landing.css">
+</head>
+<body>
+    <header>
+        <h1>Manage Orders</h1>
+        <nav>
+            <ul>
+                <li><a href="admin.html">Dashboard</a></li>
+                <li style="font-size: 20px;"><a href="vieworders.html">View orders</a></li>
+                <li style="font-size: 20px;"><a href="processorders.html">Processorders</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="view-orders">
+            <h2>View Orders</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Customer Name</th>
+                        <th>Order Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>2023-09-20</td>
+                        <td>Processing</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                  
+                    <tr>
+                        <td>2</td>
+                        <td>John bizimana</td>
+                        <td>2023-09-20</td>
+                        <td>Processing</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>benjamin </td> Doe</td>
+                        <td>2023-09-20</td>
+                        <td>Processing</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>John Do</td>
+                        <td>2023-09-20</td>
+                        <td>Processing</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>John Doe</td>
+                        <td>2023-09-20</td>
+                        <td>Processing</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="process-orders">
+            <h2>Process Orders</h2>
+           
+            <form>
+                <label for="order-id">Order ID:</label>
+                <input type="text" id="order-id" name="order-id" required>
+                <button type="submit">Process</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Pharmacy Delivery. All rights reserved.</p>
+    </footer>
+</body>
+</html>

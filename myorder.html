@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Orders</title>
+    <link rel="stylesheet" href="myorder.css">
+</head>
+<body>
+    <header>
+        <h2>My Orders</h1>
+        <nav>
+            <ul>
+                <li><a href="useradm.html">Dashboard</a></li>
+                <li><a href="reminder.html">Refill Reminders</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="order-history">
+            <h2>Order History</h2>
+          
+            <table>
+                <thead>
+                    <tr>
+                        <th>Order ID</th>
+                        <th>Order Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                 
+                    <tr>
+                        <td>1</td>
+                        <td>2023-09-20</td>
+                        <td>Delivered</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                 
+                    <tr>
+                        <td>2</td>
+                        <td>2023-09-20</td>
+                        <td>Not yet</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>2023-08-20</td>
+                        <td>Delivered</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>2023-10-20</td>
+                        <td>Delivered</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>2023-09-20</td>
+                        <td>Delivered</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>2023-09-20</td>
+                        <td>Not yet</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>2023-10-20</td>
+                        <td>Delivered</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>2023-09-20</td>
+                        <td>Delivered</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>2023-10-20</td>
+                        <td>Delivered</td>
+                        <td><a href="#">View Details</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Pharmacy Delivery. All rights reserved.</p>
+    </footer>
+
+    <script>
+       
+        const orderDetailsLinks = document.querySelectorAll("a[href='#']");
+        orderDetailsLinks.forEach(link => {
+            link.addEventListener("click", function (event) {
+                
+                alert("Viewing Order Details");
+                event.preventDefault(); 
+            });
+        });
+    </script>
+</body>
+</html>

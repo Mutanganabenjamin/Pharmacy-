@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkout</title>
+    
+</head>
+<body>
+    <h1>Checkout</h1>
+    <p>Please review your order and complete the payment:</p>
+
+    
+    <div class="order-summary">
+        <h2>Order Summary</h2>
+        <ul id="order-items">
+            
+        </ul>
+        <p>Total Amount: <span id="order-total">$0.00</span></p>
+    </div>
+
+   
+    <div class="payment-form">
+        <h2>Payment Information</h2>
+        <form action="process-payment.php" method="post"> 
+            <label for="card-number">Credit Card Number:</label><br>
+            <input type="text" id="card-number" name="card-number" required><br>
+
+            <label for="expiration-date">Expiration Date:</label><br>
+            <input type="text" id="expiration-date" name="expiration-date" placeholder="MM/YYYY" required><br>
+
+            <label for="cvv">CVV:</label><br>
+            <input type="text" id="cvv" name="cvv" required><br>
+
+            <button type="submit">Submit Payment</button>
+        </form>
+    </div>
+
+   
+    <script>
+        var cart = []; 
+
+       
+        function displayOrderSummary() {
+            var orderItems = document.getElementById("order-items");
+            var orderTotal = document.getElementById("order-total");
+            var total = 0;
+
+           
+            orderItems.innerHTML = "";
+
+           
+            cart.forEach(function (item) {
+                var listItem = document.createElement("li");
+                listItem.textContent = `${item.name} (Quantity: ${item.quantity}) - $${(item.price * item.quantity).toFixed(2)}`;
+                orderItems.appendChild(listItem);
+
+                total += item.price * item.quantity;
+            });
+
+            orderTotal.textContent = `$${total.toFixed(2)}`;
+        }
+
+        
+        displayOrderSummary();
+    </script>
+</body>
+</html>

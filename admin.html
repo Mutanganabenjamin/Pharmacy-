@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="landing.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome, Admin</h1>
+        <nav>
+            <ul>
+                <li><a href="manageorders.html">Manage Orders</a></li>
+                <li><a href="managemedicine.html">Manage Medicines</a></li>
+                <li><a href="manageuser.html">Manage Users</a></li>
+                <li><a href="logout.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+       
+        <h2>Admin Dashboard</h2>
+        <p>Welcome to the admin dashboard. You can manage various aspects of the pharmacy delivery system here.</p>
+    </main>
+    
+    <script>
+      
+document.addEventListener("DOMContentLoaded", function () {
+   
+    const isAdmin = true; 
+   
+    const greetingElement = document.querySelector("h1");
+    const username = isAdmin ? "Admin" : "User"; 
+
+    
+    greetingElement.textContent = `Welcome, ${username}`;
+    if (isAdmin) {
+        const manageOrdersLink = document.querySelector("a[href='manage-orders.html']");
+        manageOrdersLink.addEventListener("click", function (event) {
+           
+            alert("Managing Orders");
+            event.preventDefault();
+        });
+
+        const manageMedicinesLink = document.querySelector("a[href='manage-medicines.html']");
+        manageMedicinesLink.addEventListener("click", function (event) {
+            alert("Managing Medicines");
+            event.preventDefault(); 
+        });
+
+        const manageUsersLink = document.querySelector("a[href='manage-users.html']");
+        manageUsersLink.addEventListener("click", function (event) {
+            
+            alert("Managing Users");
+            event.preventDefault(); 
+        });
+    } else {
+        
+        const myOrdersLink = document.querySelector("a[href='user-orders.html']");
+        myOrdersLink.addEventListener("click", function (event) {
+            
+            alert("Viewing My Orders");
+            event.preventDefault(); 
+        });
+
+        const refillRemindersLink = document.querySelector("a[href='user-refill-reminders.html']");
+        refillRemindersLink.addEventListener("click", function (event) {
+          
+            alert("Viewing Refill Reminders");
+            event.preventDefault();
+        });
+
+        const contactSupportLink = document.querySelector("a[href='contact-support.html']");
+        contactSupportLink.addEventListener( 
+            alert("Contacting Support");
+            event.preventDefault();
+        });
+    }
+});
+</script>
+
+    <footer>&copy; 2023 Pharmacy Delivery. All rights reserved.</footer>
+</body>
+</html>

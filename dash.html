@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Pharmacy Delivery Dashboard</title>
+   
+	<script type="text/javascript">
+		function login() {
+			var username = document.getElementById("username").value;
+			if (username == "admin") {
+				window.location.href = "admin.html";
+			} else {
+				window.location.href = "user.html";
+			}
+		}
+	</script>
+</head>
+<body>
+	<h1>Pharmacy Delivery Dashboard</h1>
+	<p>Please enter your username:</p>
+	<input type="text" id="username">
+	<button onclick="login()">Login</button>
+</body>
+</html>
